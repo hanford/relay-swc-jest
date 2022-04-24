@@ -1,3 +1,5 @@
+Repro of https://github.com/vercel/next.js/issues/35469
+
 Currently SWC (with relay) doesn't seem to work with next/jest
 
 If you using Relay and Next.js and want to test, you currently need to use `babel-plugin-relay` with `babel-jest` to get test files transformed.
