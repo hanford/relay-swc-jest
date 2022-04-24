@@ -2,7 +2,9 @@ import { Environment, Network, RecordSource, Store } from "relay-runtime";
 
 async function fetchGraphQL(text, variables) {
   return new Promise((next) => {
-    const res = () => next({ data: { viewer: { user: { id: "123" } } } });
+    const res = () => {
+      return next({ data: { viewer: { user: { id: "123", name: "Foo" } } } });
+    };
 
     setTimeout(res, 1000);
   });
@@ -11,10 +13,6 @@ async function fetchGraphQL(text, variables) {
 // Relay passes a "params" object with the query name and text. So we define a helper function
 // to call our fetchGraphQL utility with params.text.
 async function fetchRelay(params, variables) {
-  console.log(
-    `fetching query ${params.name} with ${JSON.stringify(variables)}`
-  );
-
   return await fetchGraphQL(params.text, variables);
 }
 

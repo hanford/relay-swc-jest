@@ -1,22 +1,21 @@
-// https://jestjs.io/docs/next/configuration
+// WORKING CONFIG
 module.exports = {
   testPathIgnorePatterns: ["/node_modules/", "/.next/"],
   transformIgnorePatterns: ["/node_modules/"],
   moduleNameMapper: {
     // When changing these, also look at the tsconfig!
-    // "^types/(.+)$": "<rootDir>/types/$1",
+    "^types/(.+)$": "<rootDir>/types/$1",
   },
   verbose: true,
   roots: ["<rootDir>"],
   rootDir: "./",
   testEnvironment: "jsdom",
-  timers: "modern",
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", require("./babel-old.config")],
   },
 };
 
-// // jest.config.js
+// FAILING CONFIG
 // const nextJest = require("next/jest");
 
 // const createJestConfig = nextJest({
@@ -29,6 +28,10 @@ module.exports = {
 //   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
 //   moduleDirectories: ["node_modules", "<rootDir>/"],
 //   testEnvironment: "jest-environment-jsdom",
+//   moduleNameMapper: {
+//     // When changing these, also look at the tsconfig!
+//     "^types/(.+)$": "<rootDir>/types/$1",
+//   },
 //   // setupFilesAfterEnv: ["<rootDir>/test/setup.js"],
 //   transform: {
 //     // Use babel-jest to transpile tests with the next/babel preset
