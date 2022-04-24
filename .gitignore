@@ -1,6 +1,5 @@
 node_modules/
 **/*.next
-types/*.graphql.ts
 .DS_Store
 *.log
 .vscode

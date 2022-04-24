@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "relay": "mkdir -p types && relay-compiler",
-    "dev": "pnpm relay && next dev",
-    "test": "pnpm relay && pnpm jest"
+    "dev": "next dev",
+    "test": "pnpm jest"
   },
   "keywords": [],
   "author": "",
