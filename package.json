@@ -1,0 +1,45 @@
+{
+  "name": "relay-compiler-ci",
+  "version": "1.0.0",
+  "scripts": {
+    "relay": "mkdir -p types && relay-compiler",
+    "dev": "pnpm relay && next dev",
+    "test": "pnpm jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/react": "^13.1.1",
+    "babel-plugin-relay": "^13.2.0",
+    "jest": "27.4.7",
+    "next": "^12.1.5",
+    "npm-watch": "^0.11.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-relay": "^13.2.0",
+    "relay-compiler": "^13.0.1",
+    "relay-test-utils": "^13.0.2"
+  },
+  "relay": {
+    "src": "./",
+    "artifactDirectory": "./types/",
+    "schema": "./main.graphql",
+    "exclude": [
+      "**/node_modules/**/*"
+    ],
+    "language": "typescript",
+    "noFutureProofEnums": true,
+    "customScalars": {
+      "NonEmptyString": "string",
+      "EntityId": "EntityId",
+      "UnixTimestamp": "Int",
+      "DateTime": "DateString",
+      "Date": "DateString",
+      "Time": "string"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
