@@ -32,7 +32,6 @@ module.exports = {
 //     // When changing these, also look at the tsconfig!
 //     "^types/(.+)$": "<rootDir>/types/$1",
 //   },
-//   // setupFilesAfterEnv: ["<rootDir>/test/setup.js"],
 //   transform: {
 //     // Use babel-jest to transpile tests with the next/babel preset
 //     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
